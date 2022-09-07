@@ -23,6 +23,11 @@
                     id="animated-asset"
                     src="assets/poke.gltf"
                 ></a-asset-item>
+                
+                <a-asset-item
+                    id="animated-asset2"
+                    src="assets/charmander.gltf"
+                ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -41,6 +46,27 @@
                     scale="0.30 0.30 0.30"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+            
+             <a-marker
+                id="animated-marker2"
+                type="pattern"
+                preset="custom"
+                url="assets/markerCharm.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity
+                    id="bowser-model2"
+                    position="0"
+                    scale="0.30 0.30 0.30"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset2"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
