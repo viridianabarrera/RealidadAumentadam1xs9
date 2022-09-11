@@ -12,11 +12,36 @@
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded
             gesture-detector
         >
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/pregunta1.glb"
+                ></a-asset-item>
+                
+                <a-asset-item
+                    id="animated-asset2"
+                    src="assets/pregunta2.glb"
+                ></a-asset-item>
+                
+                <a-asset-item
+                    id="animated-asset3"
+                    src="assets/pregunta3.glb"
+                ></a-asset-item>
+                
+                <a-asset-item
+                    id="animated-asset4"
+                    src="assets/pregunta4.glb"
+                ></a-asset-item>
+                
+                
+            </a-assets>
+
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -27,14 +52,18 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-image
-                    src="assets/pregunta1.jpeg"
-                    scale="2 2 2"
+                <a-entity
+                    id="bowser-model"
+                    position="0"
+                    scale="0.8 0.8 0.8"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
                     class="clickable"
-                    rotation="-90 0 0"
                     gesture-handler
-                ></a-image>
+                ></a-entity>
             </a-marker>
+            
+             
              <a-marker
                 id="animated-marker2"
                 type="pattern"
@@ -45,13 +74,15 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerB"
             >
-                <a-image
-                    src="assets/pregunta2.jpeg"
-                    scale="2 2 2"
+                <a-entity
+                    id="bowser-model2"
+                    position="0"
+                    scale="3 3 3"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset2"
                     class="clickable"
-                    rotation="-90 0 0"
                     gesture-handler
-                ></a-image>
+                ></a-entity>
             </a-marker>
             
             <a-marker
@@ -64,13 +95,15 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerC"
             >
-                <a-image
-                    src="assets/pregunta3.jpeg"
-                    scale="2 2 2"
+                <a-entity
+                    id="bowser-model3"
+                    position="0"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset3"
                     class="clickable"
-                    rotation="-90 0 0"
                     gesture-handler
-                ></a-image>
+                ></a-entity>
             </a-marker>
             
             <a-marker
@@ -83,14 +116,21 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerD"
             >
-                <a-image
-                    src="assets/pregunta4.jpeg"
-                    scale="2 2 2"
+                <a-entity
+                    id="bowser-model4"
+                    position="0 1 0"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset4"
                     class="clickable"
-                    rotation="-90 0 0"
                     gesture-handler
-                ></a-image>
+                ></a-entity>
             </a-marker>
+            
+           
+            
+           
+           
 
             <a-entity camera></a-entity>
         </a-scene>
